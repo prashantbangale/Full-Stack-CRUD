@@ -1,0 +1,30 @@
+
+import './App.css'
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+import Navbar from './Layout/Navbar'
+import Home from './Pages/Home'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import AddUser from './User/AddUser'
+import EditUser from './User/EditUser'
+import ViewUser from './User/ViewUser'
+function App() {
+
+  return (
+   <div className='App'>
+    <Router>
+      <Navbar></Navbar>
+
+     <Routes>
+      <Route exact path="/" element={<Home/>}></Route>
+      <Route exact path="/adduser" element={<AddUser/>}></Route>
+      <Route exact path="/edituser/:id" element={<EditUser />} />
+      <Route exact path="/viewuser/:id" element={<ViewUser />} />
+      </Routes>
+    
+    </Router>
+     
+   </div>
+  )
+}
+
+export default App
