@@ -17,7 +17,11 @@ import com.fullstack_backend.Model.User;
 import com.fullstack_backend.Repository.UserRepository;
 
 @RestController
-@CrossOrigin("http://localhost:5173")
+//@CrossOrigin("http://localhost:5173")
+@CrossOrigin(origins = {
+	    "http://localhost:5173",
+	    "https://full-stack-crud-lovat.vercel.app"
+	})
 public class UserController {
 	
 	@Autowired
